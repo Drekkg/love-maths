@@ -57,8 +57,9 @@ let isCorrect = calculatedAnswer[0] === userAnswer;
 if(isCorrect){
     alert("Hey Well done! :D")
 } else {
-    `Awww you answered ${userAnswer} the correct answer is ${calculatedAnswer[0]}`;
+   alert( `Awww you answered ${userAnswer} the correct answer is ${calculatedAnswer[0]}`);
 }
+document.getElementById("answer-box").value = "";
 runGame(calculatedAnswer[1]);
 }
 /**Gets the operands and operator from the dom 
