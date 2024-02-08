@@ -65,7 +65,9 @@ function calculateCorrectAnswer() {
   let operator = document.getElementById("operator").innerText;
   if (operator === "+") {
     return [operand1 + operand2, "addition"];
-  } else {
+  } else if(operator === "x"){
+    return [operand1 * operand2, "multiply"];
+  }else {
     alert("umimplemented operator");
   }
 }
