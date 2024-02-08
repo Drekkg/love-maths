@@ -16,11 +16,22 @@ document.addEventListener("DOMContentLoaded", function () {
   runGame("addition");
 });
 
+document.getElementById("answer-box").addEventListener("keydown", function(event) {
+if (event.key === "Enter") {
+  checkAnswer();
+}
+})
+
 /**
  * The main game loop first loaded when the script is called
  * and after the users answer has been processed
  */
 function runGame(gameType) {
+   //clear the answer box
+  document.getElementById("answer-box").value = "";
+  document.getElementById("answer-box").focus();
+
+
   //creates two random numbers between 1 and 25
   let num1 = Math.floor(Math.random() * 25) + 1;
   let num2 = Math.floor(Math.random() * 25) + 1;
@@ -31,7 +42,7 @@ function runGame(gameType) {
   } else if (gameType === "multiply") {
     displayMultiplyQuestion(num1, num2);
   } else if (gameType === "division") {
-    displayDivideQuestion(num1, num2);
+    displayDivideQuestion(num1, num2);               
   } else {
     alert(`Unknown Gametype ${gameType}`);
     throw `Unknown Gametype ${gameType} aborting`;
@@ -53,7 +64,7 @@ function checkAnswer() {
     );
     incrementWrongAnswer();
   }
-  document.getElementById("answer-box").value = "";
+  
   runGame(calculatedAnswer[1]);
 }
 /**Gets the operands and operator from the dom
