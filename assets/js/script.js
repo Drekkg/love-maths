@@ -122,7 +122,7 @@ function displayDivideQuestion(operand1, operand2) {
   document.getElementById("operand1").textContent = operand1 > operand2 ? operand1 : operand2;
   document.getElementById("operand2").textContent = operand2 > operand1 ? operand1 :  operand2;
   if(operand1 % operand2 != 0 || operand1 === operand2) {
-    console.log(operand1 + " " + operand2);
+    
     runGame("division");
   }
   document.getElementById("operator").textContent = "/";
